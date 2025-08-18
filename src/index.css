@@ -1,0 +1,31 @@
+:root {
+    font-family: "Lato", sans-serif;
+    --main-bg-color: #fdfbf9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: black;
+}
+
+body {
+    background-color: var(--main-bg-color);
+}
+.container {
+    width: 1218px;
+    margin: 0 auto;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 50%; /* середина экрана */
+    width: 1px; /* толщина линии */
+    background: rgba(255, 0, 0, 0.5); /* красная полупрозрачная линия */
+    pointer-events: none; /* чтобы не мешала кликам */
+    z-index: 9999;
+}
