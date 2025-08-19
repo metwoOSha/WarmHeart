@@ -38,6 +38,7 @@
     flex-direction: column;
     gap: 15px;
     p {
+        color: var(--main-bg-color);
         font-weight: 400;
         font-size: 17px;
         opacity: 0.3;

@@ -1,9 +1,44 @@
+import { Button } from "../../components/Button/Button";
 import cls from "./Home.module.css";
+
+import blanket from "../../assets/img/blanket.png";
+
+import bed from "../../assets/img/bed.png";
+import wrapped from "../../assets/img/wrapped.png";
+import carpets from "../../assets/img/carpets.png";
 
 export function Home() {
     return (
         <main>
-            <section className={cls.home}>
+            <section className={cls.comfort}>
+                <div className="container">
+                    <div className={cls.comfortWrapper}>
+                        <div className={cls.comfortContainer}>
+                            <h2>Create comfort in home</h2>
+                            <p>
+                                A blanket is a simple and versatile thing that
+                                can make relaxing after a hard day's work much
+                                more comfortable.
+                            </p>
+                        </div>
+                        <div className={cls.sideneertComfort}>
+                            <h2>Sideneert</h2>
+                            <p>
+                                It is made from soft New Zealand wool, which is
+                                naturally stain-repellent.
+                                <br />
+                                <br />
+                                This bedspread is an easy way to freshen up your
+                                bedroom decor. Plus, it can be used as an extra
+                                blanket if you get cold.
+                            </p>
+                            <Button variant="white">Go to shop</Button>
+                        </div>
+                    </div>
+                </div>
+                <img src={blanket} alt="blanket" className={cls.img} />
+            </section>
+            <section className={cls.eco}>
                 <div className="container">
                     <div className={cls.wrapper}>
                         <h2>We use eco-friendly materials</h2>
@@ -40,6 +75,28 @@ export function Home() {
                             />
                         </svg>
                     </span>
+                </div>
+            </section>
+            <section className={cls.followUs}>
+                <div className="container">
+                    <div className={cls.followUsContainer}>
+                        <h2>Follow us on instagram</h2>
+                        <div className={cls.followUsWrapper}>
+                            <div className={cls.bedBlock}>
+                                <img src={bed} alt="bed" />
+                                <p>
+                                    On our Instagram, we regularly share
+                                    the most interesting news. We also tell you
+                                    about all our new products.
+                                </p>
+                            </div>
+                            <img src={wrapped} alt="wrapped" />
+                            <div className={cls.carpetsBlock}>
+                                <img src={carpets} alt="carpets" />
+                                <p>@warm.heart</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>

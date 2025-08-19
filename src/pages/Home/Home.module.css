@@ -1,4 +1,56 @@
-.home {
+.comfort {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 700px;
+    background-color: var(--second-bg-color);
+}
+
+.comfortWrapper {
+    display: flex;
+    justify-content: space-between;
+    h2 {
+        color: var(--main-text-color);
+        font-weight: 900;
+        font-size: 48px;
+    }
+    p {
+        font-weight: 400;
+        font-size: 21px;
+        color: var(--main-text-color);
+    }
+}
+
+.comfortContainer {
+    width: 335px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+.sideneertComfort {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 382px;
+    h2 {
+        font-size: 36px;
+    }
+    p {
+        margin-top: 30px;
+    }
+}
+
+.img {
+    position: absolute;
+    top: 50%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+}
+
+.eco {
     position: relative;
     background-color: var(--beige-bg-color);
     padding: 130px 0 150px 0;
@@ -26,4 +78,44 @@
     align-items: center;
     gap: 30px;
     margin: 0 auto;
+}
+
+.followUs {
+    height: 895px;
+    padding: 130px 0 150px 0;
+}
+
+.followUsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    h2 {
+        font-weight: 900;
+        font-size: 48px;
+    }
+}
+
+.followUsWrapper {
+    display: flex;
+    gap: 30px;
+}
+
+.bedBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    p {
+        font-weight: 400;
+        font-size: 21px;
+    }
+}
+
+.carpetsBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    P {
+        font-weight: 400;
+        font-size: 36px;
+    }
 }
