@@ -34,6 +34,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
     width: 382px;
     h2 {
         font-size: 36px;
