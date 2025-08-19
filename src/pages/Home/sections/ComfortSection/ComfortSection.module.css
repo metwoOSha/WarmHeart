@@ -1,0 +1,51 @@
+.comfort {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 700px;
+    background-color: var(--second-bg-color);
+}
+
+.comfortWrapper {
+    display: flex;
+    justify-content: space-between;
+    h2 {
+        color: var(--main-text-color);
+        font-weight: 900;
+        font-size: 48px;
+    }
+    p {
+        font-weight: 400;
+        font-size: 21px;
+        color: var(--main-text-color);
+    }
+}
+
+.comfortContainer {
+    width: 335px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+.sideneertComfort {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 382px;
+    h2 {
+        font-size: 36px;
+    }
+    p {
+        margin-top: 30px;
+    }
+}
+
+.img {
+    position: absolute;
+    top: 50%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+}

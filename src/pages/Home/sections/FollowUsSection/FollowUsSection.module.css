@@ -1,0 +1,39 @@
+.followUs {
+    height: 895px;
+    padding: 130px 0 150px 0;
+}
+
+.followUsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    h2 {
+        font-weight: 900;
+        font-size: 48px;
+    }
+}
+
+.followUsWrapper {
+    display: flex;
+    gap: 30px;
+}
+
+.bedBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    p {
+        font-weight: 400;
+        font-size: 21px;
+    }
+}
+
+.carpetsBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    P {
+        font-weight: 400;
+        font-size: 36px;
+    }
+}
