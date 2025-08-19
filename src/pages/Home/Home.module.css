@@ -1,0 +1,29 @@
+.home {
+    position: relative;
+    background-color: var(--beige-bg-color);
+    padding: 130px 0 150px 0;
+    height: 459px;
+    text-align: center;
+    span {
+        position: absolute;
+        top: 0;
+        transform: translateY(-50%) translateX(-50%);
+    }
+    h2 {
+        font-weight: 900;
+        font-size: 48px;
+    }
+    P {
+        font-weight: 400;
+        font-size: 21px;
+    }
+}
+
+.wrapper {
+    width: 802px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin: 0 auto;
+}
