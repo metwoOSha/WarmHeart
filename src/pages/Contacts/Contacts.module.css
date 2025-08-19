@@ -1,0 +1,44 @@
+.contacts {
+    padding: 20px 0 150px 0;
+}
+
+.text {
+    font-weight: 900;
+    font-size: 60px;
+}
+.wrapper {
+    margin-top: 60px;
+    display: flex;
+    gap: 30px;
+}
+.wrapperBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.block {
+    width: 490px;
+    height: 277px;
+    padding: 45px 76px 50px 30px;
+    background-color: var(--beige-bg-color);
+    border-radius: 25px;
+    h3 {
+        font-weight: 700;
+        font-size: 24px;
+    }
+}
+
+.flexBlock {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    p {
+        font-weight: 400;
+        font-size: 21px;
+    }
+    span {
+        font-weight: 700;
+    }
+}

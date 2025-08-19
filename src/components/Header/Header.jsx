@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 import cls from "./Header.module.css";
 
 export function Header() {
@@ -5,11 +7,13 @@ export function Header() {
         <div className="container">
             <header className={cls.header}>
                 <nav className={cls.linksPages}>
-                    <a href="">Shop</a>
-                    <a href="">About us</a>
-                    <a href="">Contacts</a>
+                    <NavLink to="/shop">Shop</NavLink>
+                    <NavLink to="/about">About us</NavLink>
+                    <NavLink to="/contacts">Contacts</NavLink>
                 </nav>
-                <h1>warm heart</h1>
+                <NavLink to="/" className={cls.logo}>
+                    <h1>warm heart</h1>
+                </NavLink>
                 <nav className={cls.linksSearch}>
                     <a href="">Search</a>
                     <a href="">Cart (4)</a>

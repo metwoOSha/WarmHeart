@@ -1,3 +1,56 @@
+import cls from "./Contacts.module.css";
+
 export function Contacts() {
-    return <div>Contacts</div>;
+    return (
+        <section className={cls.contacts}>
+            <div className="container">
+                <h2 className={cls.text}>Contacts</h2>
+                <div className={cls.wrapper}>
+                    <div className={cls.wrapperBlock}>
+                        <div className={cls.block}>
+                            <h3>WARM HEART SHOP</h3>
+                            <div className={cls.flexBlock}>
+                                <p>
+                                    Phone number: <span>+44 330 321 8754</span>
+                                </p>
+                                <p>
+                                    Address:{" "}
+                                    <span>2A Craven Street, Northampton</span>
+                                </p>
+                                <p>
+                                    Email: <span>warmheart.shop@gmail.com</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div className={cls.block}>
+                            <h3>WARM HEART OFFICE</h3>
+                            <div className={cls.flexBlock}>
+                                <p>
+                                    Phone number: <span>+44 330 456 1425</span>
+                                </p>
+                                <p>
+                                    Address:{" "}
+                                    <span>70 Edith Street, Northampton</span>
+                                </p>
+                                <p>
+                                    Email:{" "}
+                                    <span>warmheart.office@gmail.com</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2898.106158400401!2d-0.8862761230860698!3d52.2399436569261!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48770ed034ce311f%3A0x3ada0b083dfa8207!2zQWJpbmd0b24gU3F1YXJlIEdlbmVyYWwgU3RvcmUsIDcwIEVkaXRoIFN0LCBOb3J0aGFtcHRvbiBOTjEgNUVXLCDQktC10LvQuNC60L7QsdGA0LjRgtCw0L3QuNGP!5e1!3m2!1sru!2sua!4v1755565766778!5m2!1sru!2sua"
+                        width="698"
+                        height="585"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="Google Map"
+                    ></iframe>
+                </div>
+            </div>
+        </section>
+    );
 }
