@@ -1,9 +1,31 @@
+import { createBrowserRouter } from "react-router";
+import { RouterProvider } from "react-router/dom";
+
 import { MainLayout } from "./components/MainLayout/MainLayout";
+import { Home } from "./pages/Home";
+import { Shop } from "./pages/Shop";
+import { About } from "./pages/About/About";
+import { Contacts } from "./pages/Contacts/Contacts";
+import { NotFound } from "./pages/NotFound/NotFound";
+
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <MainLayout />,
+        children: [
+            { index: true, element: <Home /> },
+            { path: "shop", element: <Shop /> },
+            { path: "about", element: <About /> },
+            { path: "contacts", element: <Contacts /> },
+            { path: "*", element: <NotFound /> },
+        ],
+    },
+]);
 
 function App() {
     return (
         <>
-            <MainLayout />
+            <RouterProvider router={router} />,
         </>
     );
 }
