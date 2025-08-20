@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { HamburgerMenu } from "../HamburgerMenu";
 
 export function Header() {
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
 
     function toogleMenu() {
         setIsOpen(!isOpen);
@@ -14,28 +14,27 @@ export function Header() {
     useEffect(() => {
         const scrollBarWidth =
             window.innerWidth - document.documentElement.clientWidth;
+        const doc = document.body.style;
         if (isOpen) {
-            document.body.style.overflow = "hidden";
-            document.body.style.paddingRight = scrollBarWidth + "px";
-            document.querySelectorAll("section").forEach((section) => {
-                section.classList.add("active");
-            });
-            document.querySelectorAll("footer").forEach((section) => {
-                section.classList.add("active");
+            doc.overflow = "hidden";
+            doc.paddingRight = scrollBarWidth + "px";
+            ["section", "footer", "header"].forEach((tag) => {
+                document.querySelectorAll(tag).forEach((el) => {
+                    el.classList.add("active");
+                });
             });
         } else {
-            document.body.style.overflow = "";
-            document.body.style.paddingRight = "";
-            document.querySelectorAll("section").forEach((section) => {
-                section.classList.remove("active");
-            });
-            document.querySelectorAll("footer").forEach((section) => {
-                section.classList.remove("active");
+            doc.overflow = "";
+            doc.paddingRight = "";
+            ["section", "footer", "header"].forEach((tag) => {
+                document.querySelectorAll(tag).forEach((el) => {
+                    el.classList.remove("active");
+                });
             });
         }
         return () => {
-            document.body.style.overflow = "";
-            document.body.style.paddingRight = "";
+            doc.overflow = "";
+            doc.paddingRight = "";
         };
     }, [isOpen]);
 
@@ -44,6 +43,34 @@ export function Header() {
             {isOpen && <HamburgerMenu toogleMenu={toogleMenu} />}
             <div className="container">
                 <div className={cls.header}>
+                    <div className={cls.burger}>
+                        <svg
+                            width="42"
+                            height="22"
+                            viewBox="0 0 42 22"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M1 1H41"
+                                stroke="#2C2C2C"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                            />
+                            <path
+                                d="M1 11H31"
+                                stroke="#2C2C2C"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                            />
+                            <path
+                                d="M1 21H41"
+                                stroke="#2C2C2C"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                            />
+                        </svg>
+                    </div>
                     <nav className={cls.linksPages}>
                         <NavLink
                             to="/shop"

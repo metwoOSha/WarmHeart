@@ -17,6 +17,7 @@
     display: flex;
     flex-direction: column;
     gap: 50px;
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.3);
     a {
         font-weight: 400;
         font-size: 21px;

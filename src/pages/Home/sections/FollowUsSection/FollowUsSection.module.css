@@ -1,12 +1,6 @@
 .followUs {
     height: 895px;
     padding: 130px 0 150px 0;
-}
-
-.followUsContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
     h2 {
         font-weight: 900;
         font-size: 48px;
@@ -14,26 +8,42 @@
 }
 
 .followUsWrapper {
+    margin-top: 60px;
     display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     gap: 30px;
 }
-
-.bedBlock {
+.blockWrapper {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    p {
-        font-weight: 400;
-        font-size: 21px;
-    }
+    flex-shrink: 1;
 }
 
-.carpetsBlock {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    P {
-        font-weight: 400;
-        font-size: 36px;
-    }
+.blockWrapper:nth-child(1) {
+    flex-basis: 386px;
+    max-width: 100%;
+}
+
+.blockWrapper:nth-child(2) {
+    flex-basis: 490px;
+    max-width: 100%;
+}
+
+.blockWrapper:nth-child(3) {
+    flex-basis: 280px;
+    max-width: 100%;
+}
+
+.blockWrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+    display: block;
+}
+
+.blockWrapper p {
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 21px;
 }

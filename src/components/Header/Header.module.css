@@ -36,3 +36,16 @@
 .linksPages a.active {
     font-weight: 900;
 }
+
+.burger {
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    .burger {
+        display: block;
+    }
+    .linksPages {
+        display: none;
+    }
+}
