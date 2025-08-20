@@ -5,12 +5,12 @@ import cls from "./MainLayout.module.css";
 
 export function MainLayout() {
     return (
-        <div className={cls.MainLayout}>
+        <>
             <Header />
             <main className={cls.main}>
                 <Outlet />
             </main>
             <Footer />
-        </div>
+        </>
     );
 }

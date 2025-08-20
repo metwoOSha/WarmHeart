@@ -5,11 +5,11 @@ import { FollowUsSection } from "./sections/FollowUsSection/FollowUsSection";
 
 export function Home() {
     return (
-        <main>
+        <>
             <ComfortSection />
             <EcoSection />
             <FollowUsSection />
             <DiscountSection />
-        </main>
+        </>
     );
 }
