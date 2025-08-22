@@ -1,5 +1,4 @@
 .followUs {
-    height: 895px;
     padding: 130px 0 150px 0;
     h2 {
         font-weight: 900;
@@ -46,4 +45,77 @@
     margin-top: 20px;
     font-weight: 400;
     font-size: 21px;
+}
+#text,
+#warm {
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    .followUs {
+        padding: 90px 0 100px 0;
+    }
+    .followUsWrapper {
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #carpets {
+        display: none;
+    }
+    #text {
+        display: block;
+    }
+    .followUsWrapper {
+        gap: 20px;
+    }
+    .blockWrapper:nth-child(1),
+    .blockWrapper:nth-child(2) {
+        flex-basis: 50%;
+    }
+}
+
+@media screen and (max-width: 554px) {
+    .followUs {
+        padding: 70px 0 90px 0;
+
+        h2 {
+            font-size: 40px;
+        }
+        p {
+            font-size: 17px;
+        }
+    }
+    .blockWrapper {
+        p {
+            margin-top: 15px;
+        }
+    }
+    .followUsWrapper {
+        justify-content: center;
+    }
+    .blockWrapper:nth-child(1) {
+        flex-basis: 100%;
+    }
+    #wrapped {
+        display: none;
+    }
+    #warm {
+        display: block;
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .followU {
+        h2 {
+            font-size: 36px;
+        }
+    }
+    .blockWrapper {
+        p {
+            margin-top: 10px;
+        }
+    }
 }

@@ -8,7 +8,7 @@ export function Header() {
     const [isOpen, setIsOpen] = useState(false);
 
     function toogleMenu() {
-        setIsOpen(!isOpen);
+        setIsOpen((prev) => !prev);
     }
 
     useEffect(() => {
@@ -43,7 +43,7 @@ export function Header() {
             {isOpen && <HamburgerMenu toogleMenu={toogleMenu} />}
             <div className="container">
                 <div className={cls.header}>
-                    <div className={cls.burger}>
+                    <div className={cls.burger} onClick={toogleMenu}>
                         <svg
                             width="42"
                             height="22"
@@ -81,7 +81,7 @@ export function Header() {
                             Shop
                         </NavLink>
                         <NavLink
-                            to="/about"
+                            to="/"
                             className={({ isActive }) =>
                                 isActive ? `${cls.active}` : ""
                             }
@@ -97,9 +97,9 @@ export function Header() {
                             Contacts
                         </NavLink>
                     </nav>
-                    <NavLink to="/" className={cls.logo}>
+                    <div to="/" className={cls.logo}>
                         <h1>warm heart</h1>
-                    </NavLink>
+                    </div>
                     <nav className={cls.linksSearch}>
                         <a href="">Search</a>
                         <a href="">Cart (4)</a>

@@ -12,16 +12,18 @@ export function FollowUsSection() {
                 <div className={cls.followUsWrapper}>
                     <div className={cls.blockWrapper}>
                         <img src={bed} alt="bed" />
+                        <p id={cls.warm}>@warm.heart</p>
                         <p>
                             On our Instagram, we regularly share the most
                             interesting news. We also tell you about all our new
                             products.
                         </p>
                     </div>
-                    <div className={cls.blockWrapper}>
+                    <div className={cls.blockWrapper} id={cls.wrapped}>
                         <img src={wrapped} alt="wrapped" />
+                        <p id={cls.text}>@warm.heart</p>
                     </div>
-                    <div className={cls.blockWrapper}>
+                    <div className={cls.blockWrapper} id={cls.carpets}>
                         <img src={carpets} alt="carpets" />
                         <p>@warm.heart</p>
                     </div>

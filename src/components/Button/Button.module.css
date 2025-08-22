@@ -14,3 +14,9 @@
     background-color: var(--main-bg-color);
     color: var(--second-text-color);
 }
+
+@media screen and (max-width: 480px) {
+    .button {
+        font-size: 17px;
+    }
+}

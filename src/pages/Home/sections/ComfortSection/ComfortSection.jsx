@@ -16,22 +16,26 @@ export function ComfortSection() {
                             comfortable.
                         </p>
                     </div>
-                    <div className={cls.sideneertComfort}>
-                        <h2>Sideneert</h2>
-                        <p>
-                            It is made from soft New Zealand wool, which is
-                            naturally stain-repellent.
-                            <br />
-                            <br />
-                            This bedspread is an easy way to freshen up your
-                            bedroom decor. Plus, it can be used as an extra
-                            blanket if you get cold.
-                        </p>
-                        <Button variant="white">Go to shop</Button>
+                    <div className={cls.sideneertContainer}>
+                        <div>
+                            <img src={blanket} alt="blanket" class={cls.img} />
+                        </div>
+                        <div className={cls.sideneertBlock}>
+                            <h2>Sideneert</h2>
+                            <p>
+                                It is made from soft New Zealand wool, which is
+                                naturally stain-repellent.
+                                <br />
+                                <br />
+                                This bedspread is an easy way to freshen up your
+                                bedroom decor. Plus, it can be used as an extra
+                                blanket if you get cold.
+                            </p>
+                            <Button variant="white">Go to shop</Button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <img src={blanket} alt="blanket" className={cls.img} />
         </section>
     );
 }

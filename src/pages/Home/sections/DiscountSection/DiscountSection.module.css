@@ -7,6 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 50px;
 }
 
 .textBlock {
@@ -38,5 +39,75 @@
         border-bottom: 3px solid var(--second-bg-color);
         font-weight: 400;
         font-size: 21px;
+    }
+}
+
+@media screen and (max-width: 1218px) {
+    .discount {
+        padding: 90px 0 120px 0;
+    }
+    .textBlock {
+        width: 470px;
+    }
+    .inputBlock {
+        input {
+            width: 440px;
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .inputBlock {
+        input {
+            width: 350px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .textBlock {
+        width: auto;
+    }
+    .discountWrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .inputBlock {
+        input {
+            width: 450px;
+        }
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .discountWrapper {
+        gap: 40px;
+    }
+    .textBlock {
+        h2 {
+            font-size: 40px;
+        }
+        p {
+            font-size: 17px;
+        }
+    }
+    .inputBlock {
+        input {
+            font-size: 17px;
+            width: 305px;
+        }
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .textBlock {
+        h2 {
+            font-size: 36px;
+        }
+    }
+    .inputBlock {
+        input {
+            width: auto;
+        }
     }
 }
