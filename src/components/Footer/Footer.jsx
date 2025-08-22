@@ -1,3 +1,4 @@
+import { FooterSelect } from "../FooterSelect/FooterSelect";
 import cls from "./Footer.module.css";
 
 export function Footer() {
@@ -84,32 +85,39 @@ export function Footer() {
                             <p>Privacy policy</p>
                         </div>
                     </div>
-                    <div>
-                        <h3>Info</h3>
-                        <div className={cls.links}>
-                            <a href="#">About us</a>
-                            <a href="#">Contacts</a>
-                            <a href="#">Shop</a>
-                            <a href="#">FAQ</a>
+                    <div className={cls.linkWrapper}>
+                        <div>
+                            <h3>Info</h3>
+                            <div className={cls.links}>
+                                <a href="#">About us</a>
+                                <a href="#">Contacts</a>
+                                <a href="#">Shop</a>
+                                <a href="#">FAQ</a>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>Customer service</h3>
+                            <div className={cls.links}>
+                                <a href="#">Delivery and pickup</a>
+                                <a href="#">Payment</a>
+                                <a href="#">Exchange and return</a>
+                                <a href="#">Help</a>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>Useful information</h3>
+                            <div className={cls.links}>
+                                <a href="#">Suppliers</a>
+                                <a href="#">Buying guides</a>
+                                <a href="#">Principle of operation</a>
+                                <a href="#">Press service</a>
+                            </div>
                         </div>
                     </div>
-                    <div>
-                        <h3>Customer service</h3>
-                        <div className={cls.links}>
-                            <a href="#">Delivery and pickup</a>
-                            <a href="#">Payment</a>
-                            <a href="#">Exchange and return</a>
-                            <a href="#">Help</a>
-                        </div>
-                    </div>
-                    <div>
-                        <h3>Useful information</h3>
-                        <div className={cls.links}>
-                            <a href="#">Suppliers</a>
-                            <a href="#">Buying guides</a>
-                            <a href="#">Principle of operation</a>
-                            <a href="#">Press service</a>
-                        </div>
+                    <FooterSelect className={cls.footerSelect} />
+                    <div id={cls.privacy}>
+                        <p>© WARM HEART 2025</p>
+                        <p>Privacy policy</p>
                     </div>
                 </div>
             </div>

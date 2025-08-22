@@ -98,11 +98,67 @@ export function Header() {
                         </NavLink>
                     </nav>
                     <div to="/" className={cls.logo}>
-                        <h1>warm heart</h1>
+                        <h1 id={cls.mainText}>warm heart</h1>
+                        <h1 id={cls.wh}>WH</h1>
                     </div>
                     <nav className={cls.linksSearch}>
                         <a href="">Search</a>
                         <a href="">Cart (4)</a>
+                    </nav>
+                    <nav id={cls.svgIcons}>
+                        <svg
+                            width="28"
+                            height="28"
+                            viewBox="0 0 28 28"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            id={cls.searchIcon}
+                        >
+                            <path
+                                d="M12.8333 22.1667C17.988 22.1667 22.1667 17.988 22.1667 12.8333C22.1667 7.67868 17.988 3.5 12.8333 3.5C7.67868 3.5 3.5 7.67868 3.5 12.8333C3.5 17.988 7.67868 22.1667 12.8333 22.1667Z"
+                                stroke="#2C2C2C"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
+                            <path
+                                d="M24.5008 24.5L19.4258 19.425"
+                                stroke="#2C2C2C"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
+                        </svg>
+                        <svg
+                            width="28"
+                            height="28"
+                            viewBox="0 0 28 28"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M7 2.33333L3.5 7V23.3333C3.5 23.9522 3.74583 24.5457 4.18342 24.9833C4.621 25.4208 5.21449 25.6667 5.83333 25.6667H22.1667C22.7855 25.6667 23.379 25.4208 23.8166 24.9833C24.2542 24.5457 24.5 23.9522 24.5 23.3333V7L21 2.33333H7Z"
+                                stroke="#2C2C2C"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
+                            <path
+                                d="M3.5 7H24.5"
+                                stroke="#2C2C2C"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
+                            <path
+                                d="M18.6673 11.6667C18.6673 12.9043 18.1757 14.0913 17.3005 14.9665C16.4253 15.8417 15.2383 16.3333 14.0007 16.3333C12.763 16.3333 11.576 15.8417 10.7008 14.9665C9.82565 14.0913 9.33398 12.9043 9.33398 11.6667"
+                                stroke="#2C2C2C"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
+                        </svg>
+                        <span>(4)</span>
                     </nav>
                 </div>
             </div>

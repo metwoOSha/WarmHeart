@@ -15,7 +15,12 @@
         font-size: 21px;
         text-decoration: none;
         cursor: pointer;
+        color: var(--second-text-color);
     }
+}
+
+#wh {
+    display: none;
 }
 
 .logo {
@@ -41,6 +46,10 @@
     font-weight: 900;
 }
 
+#svgIcons {
+    display: none;
+}
+
 .burger {
     display: none;
 }
@@ -51,5 +60,40 @@
     }
     .linksPages {
         display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .linksSearch {
+        display: none;
+    }
+    #svgIcons {
+        display: flex;
+        align-items: center;
+        font-size: 21px;
+        gap: 10px;
+        :nth-child(1) {
+            margin-right: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .header {
+        h1 {
+            font-size: 28px;
+        }
+    }
+    #searchIcon {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    #mainText {
+        display: none;
+    }
+    #wh {
+        display: block;
     }
 }

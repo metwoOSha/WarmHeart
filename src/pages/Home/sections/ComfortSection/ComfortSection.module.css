@@ -76,7 +76,7 @@
     }
     .comfortContainer {
         margin-right: auto;
-        width: 633px;
+        width: 580px;
     }
     .sideneertContainer {
         gap: 50px;
@@ -115,4 +115,7 @@
     .sideneertBlock {
         width: auto;
     }
+}
+
+@media screen and (max-width: 550px) {
 }
