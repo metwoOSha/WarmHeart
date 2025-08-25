@@ -1,0 +1,121 @@
+.popular {
+    padding: 130px 0 150px 0;
+    h2 {
+        font-weight: 900;
+        font-size: 48px;
+    }
+    h3 {
+        font-weight: 700;
+        font-size: 24px;
+    }
+    p {
+        font-weight: 400;
+        font-size: 21px;
+    }
+}
+
+.wrapper {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.block {
+    position: relative;
+    border-radius: 25px;
+    padding: 15%;
+    background-color: var(--beige-bg-color);
+    transition: 0.4s ease;
+    cursor: pointer;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    img {
+        transition: 0.3s ease;
+        width: 100%;
+    }
+}
+
+.add {
+    display: none;
+}
+.block:hover {
+    border-radius: 100%;
+    img {
+        transform: rotate(5deg) scale(120%);
+    }
+    .add {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        padding: 3%;
+        top: 7px;
+        right: 7px;
+        width: 14%;
+        height: 14%;
+        border-radius: 100%;
+        background-color: var(--second-bg-color);
+        :hover {
+            path {
+                transition: 0.3s ease;
+                stroke: #c49a6c;
+            }
+        }
+    }
+}
+
+.textBlock {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.priceBlock {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 1000px) {
+    .popular {
+        padding: 90px 0 110px 0;
+    }
+    .wrapper {
+        margin-top: 50px;
+        gap: 20px;
+    }
+    .textBlock {
+        margin-top: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .popular {
+        padding: 70px 0 90px 0;
+        h2 {
+            font-size: 40px;
+        }
+        h3 {
+            font-size: 20px;
+        }
+        p {
+            font-size: 17px;
+        }
+    }
+    .wrapper {
+        margin-top: 40px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
+}
