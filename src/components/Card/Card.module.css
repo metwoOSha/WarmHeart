@@ -1,0 +1,56 @@
+.block {
+    position: relative;
+    border-radius: 25px;
+    padding: 15%;
+    background-color: var(--beige-bg-color);
+    transition: 0.4s ease;
+    cursor: pointer;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    img {
+        transition: 0.3s ease;
+        width: 100%;
+    }
+}
+
+.add {
+    display: none;
+}
+
+.block:hover {
+    border-radius: 100%;
+    img {
+        transform: rotate(5deg) scale(120%);
+    }
+    .add {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        padding: 3%;
+        top: 7px;
+        right: 7px;
+        width: 14%;
+        height: 14%;
+        border-radius: 100%;
+        background-color: var(--second-bg-color);
+        :hover {
+            path {
+                transition: 0.3s ease;
+                stroke: #c49a6c;
+            }
+        }
+    }
+}
+
+.textBlock {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.priceBlock {
+    display: flex;
+    justify-content: space-between;
+}
