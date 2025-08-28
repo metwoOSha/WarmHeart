@@ -4,7 +4,7 @@ import cls from "./Card.module.css";
 
 export function Card({ image, name, size, price }) {
     return (
-        <div>
+        <div onClick={() => console.log(123)}>
             <div className={cls.block}>
                 {image ? (
                     <img src={image} alt="carpets" />
@@ -12,7 +12,7 @@ export function Card({ image, name, size, price }) {
                     <img src={stub} alt="carpets" />
                 )}
 
-                <div className={cls.add}>
+                <div onClick={() => console.log("add")} className={cls.add}>
                     <svg
                         width="38"
                         height="38"

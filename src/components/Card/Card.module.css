@@ -1,5 +1,6 @@
 .block {
     position: relative;
+    z-index: 1;
     border-radius: 25px;
     padding: 15%;
     background-color: var(--beige-bg-color);
@@ -30,10 +31,12 @@
         padding: 3%;
         top: 7px;
         right: 7px;
+        z-index: 999;
         width: 14%;
         height: 14%;
         border-radius: 100%;
         background-color: var(--second-bg-color);
+
         :hover {
             path {
                 transition: 0.3s ease;
