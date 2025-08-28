@@ -10,7 +10,7 @@ export function PopularSection() {
                 <div className={cls.wrapper}>
                     <div>
                         <div className={cls.block}>
-                            <img src={carpets} alt="carpets" />
+                            <img src="/image/dabildun.png" alt="carpets" />
                             <div className={cls.add}>
                                 <svg
                                     width="38"

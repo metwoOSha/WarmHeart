@@ -1,8 +1,17 @@
-export function Card({ img, title, size, price }) {
+import stub from "../../assets/img/NoImage.png";
+
+import cls from "./Card.module.css";
+
+export function Card({ image, name, size, price }) {
     return (
         <div>
             <div className={cls.block}>
-                <img src={carpets} alt="carpets" />
+                {image ? (
+                    <img src={image} alt="carpets" />
+                ) : (
+                    <img src={stub} alt="carpets" />
+                )}
+
                 <div className={cls.add}>
                     <svg
                         width="38"
@@ -21,10 +30,10 @@ export function Card({ img, title, size, price }) {
                 </div>
             </div>
             <div className={cls.textBlock}>
-                <h3>Gerhild</h3>
+                <h3>{name}</h3>
                 <div className={cls.priceBlock}>
-                    <p>130x170 cm</p>
-                    <p>€90</p>
+                    <p>{size}</p>
+                    <p>{`€${price}`}</p>
                 </div>
             </div>
         </div>
