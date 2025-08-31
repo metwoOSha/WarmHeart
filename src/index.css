@@ -13,6 +13,11 @@
     padding: 0;
     box-sizing: border-box;
     user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    touch-action: manipulation;
 }
 
 h1,
@@ -30,6 +35,12 @@ body {
     width: 100%;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+@media (hover: none) and (pointer: coarse) {
+    body {
+        cursor: none;
+    }
 }
 
 section,

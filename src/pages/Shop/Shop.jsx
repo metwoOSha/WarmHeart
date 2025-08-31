@@ -1,3 +1,13 @@
+import { LastViewed } from "./sections/LastViewed";
+import { ListProducts } from "./sections/ListProducts/ListProducts";
+import { ShopHeader } from "./sections/ShopHeader/ShopHeader";
+
 export function Shop() {
-    return <div>Shop</div>;
+    return (
+        <>
+            <ShopHeader />
+            <ListProducts />
+            <LastViewed />
+        </>
+    );
 }

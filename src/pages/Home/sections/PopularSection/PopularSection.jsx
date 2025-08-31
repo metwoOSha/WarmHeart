@@ -1,65 +1,79 @@
-import carpets from "../../../../assets/img/carpets_1.png";
+import { useEffect, useState } from "react";
+
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProducts } from "../../../../store/slices/productsSlice";
+
+import { Card } from "../../../../components/Card/Card";
 
 import cls from "./PopularSection.module.css";
 
 export function PopularSection() {
+    const [page, setPage] = useState(1);
+    const [limit, setLimit] = useState(
+        window.innerWidth < 380 ? 1 : window.innerWidth < 768 ? 2 : 3
+    );
+    const [pagination, setPagination] = useState([]);
+
+    const dispatch = useDispatch();
+
+    const { list, loading, totalCount } = useSelector(
+        (state) => state.products
+    );
+
+    useEffect(() => {
+        function handleResize() {
+            if (window.innerWidth < 380) {
+                setLimit(1);
+            } else if (window.innerWidth < 768) {
+                setLimit(2);
+            } else {
+                setLimit(3);
+            }
+        }
+        dispatch(fetchProducts({ page, limit, to: "popular" }));
+
+        window.addEventListener("resize", handleResize);
+        handleResize();
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, [dispatch, page, limit]);
+
+    useEffect(() => {
+        const pagesCount = Math.ceil(totalCount / limit);
+        const pagesArray = new Array(pagesCount).fill(0).map((_, i) => i + 1);
+        setPagination(pagesArray);
+    }, [totalCount, limit]);
+
     return (
         <section className={cls.popular}>
             <div className="container">
                 <h2>Popular products</h2>
                 <div className={cls.wrapper}>
-                    <div>
-                        <div className={cls.block}>
-                            <img src={carpets} alt="carpets" />
-                            <div className={cls.add}>
-                                <svg
-                                    width="38"
-                                    height="38"
-                                    viewBox="0 0 38 38"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M19 36L19 2M36 19L2 19"
-                                        stroke="#FDFBF9"
-                                        strokeWidth="3"
-                                        strokeLinecap="round"
-                                    />
-                                </svg>
-                            </div>
-                        </div>
-                        <div className={cls.textBlock}>
-                            <h3>Gerhild</h3>
-                            <div className={cls.priceBlock}>
-                                <p>130x170 cm</p>
-                                <p>€90</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div className={cls.block}>
-                            <img src={carpets} alt="carpets" />
-                        </div>
-                        <div className={cls.textBlock}>
-                            <h3>Gerhild</h3>
-                            <div className={cls.priceBlock}>
-                                <p>130x170 cm</p>
-                                <p>€90</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div className={cls.block}>
-                            <img src={carpets} alt="carpets" />
-                        </div>
-                        <div className={cls.textBlock}>
-                            <h3>Gerhild</h3>
-                            <div className={cls.priceBlock}>
-                                <p>130x170 cm</p>
-                                <p>€90</p>
-                            </div>
-                        </div>
-                    </div>
+                    {list.map((item) => (
+                        <Card
+                            key={item.id}
+                            image={item.image}
+                            name={item.name}
+                            size={item.size}
+                            price={item.price}
+                        />
+                    ))}
+                </div>
+                <div className={cls.paginationBlock}>
+                    <ul className={cls.pagination}>
+                        {pagination.map((item) => (
+                            <li key={item}>
+                                <div
+                                    className={`${cls.dots} ${
+                                        item === page ? cls.dotsActive : ""
+                                    }`}
+                                    onClick={() => setPage(item)}
+                                ></div>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </div>
         </section>
