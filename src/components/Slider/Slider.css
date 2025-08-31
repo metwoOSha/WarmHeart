@@ -15,7 +15,6 @@
     justify-content: space-between;
     align-items: center;
     opacity: 0;
-    transform: translateX(100%);
     transition: opacity 0.33s ease-in-out, transform 1s ease-in-out;
 }
 
