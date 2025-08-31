@@ -83,6 +83,7 @@
 
 .pagination {
     display: flex;
+    flex-wrap: wrap;
     gap: 30px;
     list-style-type: none;
     justify-content: center;
