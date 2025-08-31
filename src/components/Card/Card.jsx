@@ -65,11 +65,7 @@ export function Card({ image, name, size, price }) {
                 ) : !image ? (
                     <img src={stub} alt="carpets" />
                 ) : (
-                    <img
-                        src={image}
-                        onLoad={() => setLoad(false)}
-                        alt="carpets"
-                    />
+                    <img src={image} alt="carpets" />
                 )}
 
                 <div onClick={() => console.log("add")} className={cls.add}>
