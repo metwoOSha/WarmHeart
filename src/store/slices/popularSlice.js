@@ -3,20 +3,12 @@ import axios from "axios";
 
 export const fetchProducts = createAsyncThunk(
     "products/fetchProducts",
-    async ({ page = 1, limit = 10, to }) => {
-        const queryParams = new URLSearchParams({
-            _page: page,
-            _limit: limit,
-        }).toString();
-
+    async () => {
         const res = await axios.get(
-            `${import.meta.env.VITE_PRODUCTS_URL}${to}?${queryParams}`
+            `${import.meta.env.VITE_PRODUCTS_URL}popular`
         );
 
-        return {
-            data: res.data,
-            totalCount: parseInt(res.headers["x-total-count"], 10) || 0,
-        };
+        return res.data;
     }
 );
 
@@ -26,7 +18,6 @@ const productsSlice = createSlice({
         list: [],
         loading: false,
         error: null,
-        totalCount: 0, // если хочешь хранить общее количество
     },
     reducers: {},
     extraReducers: (builder) => {
@@ -37,12 +28,11 @@ const productsSlice = createSlice({
             })
             .addCase(fetchProducts.fulfilled, (state, action) => {
                 state.loading = false;
-                state.list = action.payload.data;
-                state.totalCount = action.payload.totalCount;
+                state.list = action.payload;
             })
             .addCase(fetchProducts.rejected, (state, action) => {
                 state.loading = false;
-                state.error = action.error.message || "Something went wrong";
+                state.error = action.error.message;
             });
     },
 });

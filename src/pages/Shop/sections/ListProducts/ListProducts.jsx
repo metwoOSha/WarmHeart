@@ -2,18 +2,26 @@ import cls from "./ListProducts.module.css";
 
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../../../store/slices/productsSlice";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Card } from "../../../../components/Card/Card";
 import { Loading } from "../../../../components/Loading/Loading";
 
 export function ListProducts() {
+    const [page, setPage] = useState(2);
+    const [limit, setLimit] = useState(5);
     const dispatch = useDispatch();
 
-    const { list, loading, error } = useSelector((state) => state.products);
+    const { list, loading, error, totalCount } = useSelector(
+        (state) => state.products
+    );
+
+    console.log(totalCount);
 
     useEffect(() => {
-        dispatch(fetchProducts());
-    }, [dispatch]);
+        dispatch(fetchProducts({ page, limit, to: "blankets" }));
+    }, [dispatch, page, limit]);
+
+    console.log(list);
 
     return (
         <section className={cls.list}>
