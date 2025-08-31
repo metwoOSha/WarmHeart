@@ -18,7 +18,11 @@ export function ComfortSection() {
                     </div>
                     <div className={cls.sideneertContainer}>
                         <div>
-                            <img src={blanket} alt="blanket" class={cls.img} />
+                            <img
+                                src={blanket}
+                                alt="blanket"
+                                className={cls.img}
+                            />
                         </div>
                         <div className={cls.sideneertBlock}>
                             <h2>Sideneert</h2>
