@@ -1,0 +1,54 @@
+.backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    p {
+        font-weight: 900;
+        font-size: 48px;
+        color: #ffc797;
+    }
+}
+
+@media screen and (max-width: 930px) {
+    .wrapper {
+        p {
+            font-size: 40px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        p {
+            font-size: 30px;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .wrapper {
+        p {
+            font-size: 25px;
+        }
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .wrapper {
+        p {
+            font-size: 21px;
+        }
+    }
+}
