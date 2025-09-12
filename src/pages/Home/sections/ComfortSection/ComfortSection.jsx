@@ -2,6 +2,7 @@ import cls from "./ComfortSection.module.css";
 
 import blanket from "../../../../assets/img/blanket.png";
 import { Button } from "../../../../components/Button";
+import { Link } from "react-router-dom";
 
 export function ComfortSection() {
     return (
@@ -35,7 +36,9 @@ export function ComfortSection() {
                                 bedroom decor. Plus, it can be used as an extra
                                 blanket if you get cold.
                             </p>
-                            <Button variant="white">Go to shop</Button>
+                            <Link to="/shop">
+                                <Button variant="white">Go to shop</Button>
+                            </Link>
                         </div>
                     </div>
                 </div>

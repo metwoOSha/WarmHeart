@@ -42,7 +42,8 @@
     gap: 50px;
 }
 
-.linksPages a.active {
+.linksPages a.active,
+.linksSearch a.active {
     font-weight: 900;
 }
 

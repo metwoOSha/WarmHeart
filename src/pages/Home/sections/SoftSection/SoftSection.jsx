@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "../../../../components/Button/Button";
 import { Slider } from "../../../../components/Slider/Slider";
 import cls from "./SoftSection.module.css";
@@ -14,7 +15,9 @@ export function SoftSection() {
                             the arm of the sofa, and the atmosphere in the house
                             will be warmer.
                         </p>
-                        <Button>Shop now</Button>
+                        <Link to="/shop">
+                            <Button>Shop now</Button>
+                        </Link>
                     </div>
                     <div className={cls.block}>
                         <Slider />

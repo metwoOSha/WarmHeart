@@ -1,0 +1,91 @@
+.currentProduct {
+    padding: 30px 0 130px 0;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.imageBlock {
+    width: 600px;
+    img {
+        width: 100%;
+    }
+}
+
+.infoBlock {
+    width: 460px;
+    h2 {
+        font-weight: 900;
+        font-size: 60px;
+    }
+    p {
+        font-weight: 400;
+        font-size: 36px;
+    }
+}
+.price {
+    margin-top: 10px;
+}
+
+.descr {
+    margin-top: 45px;
+    display: flex;
+    gap: 40px;
+}
+.button {
+    font-weight: 700;
+    font-size: 24px;
+    opacity: 0.3;
+    border: none;
+    outline: none;
+    background-color: inherit;
+}
+
+.buttonActive {
+    opacity: 1;
+}
+
+.descrBlock {
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 21px;
+    height: 120px;
+    overflow: auto;
+}
+
+.specBlock {
+    margin-top: 45px;
+    display: flex;
+    gap: 40px;
+    font-weight: 400;
+    font-size: 21px;
+}
+
+.addBlock {
+    display: flex;
+    gap: 40px;
+    align-items: baseline;
+}
+.countBlock {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.count {
+    padding-right: 1px;
+    padding-bottom: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: var(--second-bg-color);
+    font-weight: 400;
+    font-size: 21px;
+    color: var(--main-text-color);
+}

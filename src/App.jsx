@@ -7,6 +7,8 @@ import { Shop } from "./pages/Shop";
 import { About } from "./pages/About/About";
 import { Contacts } from "./pages/Contacts/Contacts";
 import { NotFound } from "./pages/NotFound/NotFound";
+import { Product } from "./pages/Product/Product";
+import { Cart } from "./pages/Cart/Cart";
 
 const router = createBrowserRouter([
     {
@@ -17,6 +19,8 @@ const router = createBrowserRouter([
             { path: "shop", element: <Shop /> },
             { path: "about", element: <About /> },
             { path: "contacts", element: <Contacts /> },
+            { path: "cart", element: <Cart /> },
+            { path: "shop/:productId", element: <Product /> },
             { path: "*", element: <NotFound /> },
         ],
     },

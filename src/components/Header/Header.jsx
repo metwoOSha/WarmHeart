@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import cls from "./Header.module.css";
 import { useEffect, useState } from "react";
 import { HamburgerMenu } from "../HamburgerMenu";
+import { useSelector } from "react-redux";
 
 export function Header() {
     const [isOpen, setIsOpen] = useState(false);
@@ -10,6 +11,8 @@ export function Header() {
     function toogleMenu() {
         setIsOpen((prev) => !prev);
     }
+
+    const { items } = useSelector((state) => state.cart);
 
     useEffect(() => {
         const scrollBarWidth =
@@ -103,7 +106,14 @@ export function Header() {
                     </div>
                     <nav className={cls.linksSearch}>
                         <a href="">Search</a>
-                        <a href="">Cart (4)</a>
+                        <NavLink
+                            to="/cart"
+                            className={({ isActive }) =>
+                                isActive ? `${cls.active}` : ""
+                            }
+                        >
+                            Cart ({items.length})
+                        </NavLink>
                     </nav>
                     <nav id={cls.svgIcons}>
                         <svg
@@ -158,7 +168,7 @@ export function Header() {
                                 strokeLinejoin="round"
                             />
                         </svg>
-                        <span>(4)</span>
+                        <span>({items.length})</span>
                     </nav>
                 </div>
             </div>

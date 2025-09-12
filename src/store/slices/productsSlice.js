@@ -3,9 +3,9 @@ import axios from "axios";
 
 export const fetchProducts = createAsyncThunk(
     "products/fetchProducts",
-    async ({ page = 1, limit = 10, to }) => {
+    async ({ isPage = 1, limit = 10, to }) => {
         const queryParams = new URLSearchParams({
-            _page: page,
+            _page: isPage,
             _limit: limit,
         }).toString();
 
@@ -26,7 +26,7 @@ const productsSlice = createSlice({
         list: [],
         loading: false,
         error: null,
-        totalCount: 0, // если хочешь хранить общее количество
+        totalCount: 0,
     },
     reducers: {},
     extraReducers: (builder) => {

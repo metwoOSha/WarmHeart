@@ -6,13 +6,13 @@ import { fetchProducts } from "../../../../store/slices/productsSlice";
 import { Card } from "../../../../components/Card/Card";
 
 import cls from "./PopularSection.module.css";
+import { Pagination } from "../../../../components/Pagination/Pagination";
 
 export function PopularSection() {
-    const [page, setPage] = useState(1);
+    const [isPage, setIsPage] = useState(1);
     const [limit, setLimit] = useState(
-        window.innerWidth < 380 ? 1 : window.innerWidth < 768 ? 2 : 3
+        window.innerWidth <= 380 ? 1 : window.innerWidth <= 768 ? 2 : 3
     );
-    const [pagination, setPagination] = useState([]);
 
     const dispatch = useDispatch();
 
@@ -21,16 +21,28 @@ export function PopularSection() {
     );
 
     useEffect(() => {
+        dispatch(fetchProducts({ isPage, limit, to: "popular" }));
+    }, [dispatch, isPage, limit]);
+
+    useEffect(() => {
         function handleResize() {
-            if (window.innerWidth < 380) {
-                setLimit(1);
-            } else if (window.innerWidth < 768) {
-                setLimit(2);
+            let newLimit;
+            if (window.innerWidth <= 380) {
+                newLimit = 1;
+            } else if (window.innerWidth <= 768) {
+                newLimit = 2;
             } else {
-                setLimit(3);
+                newLimit = 3;
             }
+
+            setLimit((prevLimit) => {
+                if (prevLimit !== newLimit) {
+                    setIsPage(1);
+                    return newLimit;
+                }
+                return prevLimit;
+            });
         }
-        dispatch(fetchProducts({ page, limit, to: "popular" }));
 
         window.addEventListener("resize", handleResize);
         handleResize();
@@ -38,13 +50,7 @@ export function PopularSection() {
         return () => {
             window.removeEventListener("resize", handleResize);
         };
-    }, [dispatch, page, limit]);
-
-    useEffect(() => {
-        const pagesCount = Math.ceil(totalCount / limit);
-        const pagesArray = new Array(pagesCount).fill(0).map((_, i) => i + 1);
-        setPagination(pagesArray);
-    }, [totalCount, limit]);
+    }, [limit]);
 
     return (
         <section className={cls.popular}>
@@ -54,6 +60,7 @@ export function PopularSection() {
                     {list.map((item) => (
                         <Card
                             key={item.id}
+                            id={item.id}
                             image={item.image}
                             name={item.name}
                             size={item.size}
@@ -61,20 +68,14 @@ export function PopularSection() {
                         />
                     ))}
                 </div>
-                <div className={cls.paginationBlock}>
-                    <ul className={cls.pagination}>
-                        {pagination.map((item) => (
-                            <li key={item}>
-                                <div
-                                    className={`${cls.dots} ${
-                                        item === page ? cls.dotsActive : ""
-                                    }`}
-                                    onClick={() => setPage(item)}
-                                ></div>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+                {totalCount > limit && (
+                    <Pagination
+                        setIsPage={setIsPage}
+                        isPage={isPage}
+                        limit={limit}
+                        totalCount={totalCount}
+                    />
+                )}
             </div>
         </section>
     );

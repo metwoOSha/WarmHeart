@@ -5,23 +5,20 @@ import { fetchProducts } from "../../../../store/slices/productsSlice";
 import { useEffect, useState } from "react";
 import { Card } from "../../../../components/Card/Card";
 import { Loading } from "../../../../components/Loading/Loading";
+import { Pagination } from "../../../../components/Pagination";
 
 export function ListProducts() {
-    const [page, setPage] = useState(2);
-    const [limit, setLimit] = useState(5);
+    const [isPage, setIsPage] = useState(1);
+    const [limit, setLimit] = useState(2);
     const dispatch = useDispatch();
 
     const { list, loading, error, totalCount } = useSelector(
         (state) => state.products
     );
 
-    console.log(totalCount);
-
     useEffect(() => {
-        dispatch(fetchProducts({ page, limit, to: "blankets" }));
-    }, [dispatch, page, limit]);
-
-    console.log(list);
+        dispatch(fetchProducts({ isPage, limit, to: "blankets" }));
+    }, [dispatch, isPage, limit]);
 
     return (
         <section className={cls.list}>
@@ -35,9 +32,20 @@ export function ListProducts() {
                             name={item.name}
                             size={item.size}
                             price={item.price}
+                            id={item.id}
+                            color={item.color}
                         />
                     ))}
                 </div>
+                {!loading && totalCount && limit && (
+                    <Pagination
+                        setIsPage={setIsPage}
+                        isPage={isPage}
+                        totalCount={totalCount}
+                        limit={limit}
+                        number
+                    />
+                )}
             </div>
         </section>
     );

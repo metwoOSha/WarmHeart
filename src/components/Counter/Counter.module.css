@@ -1,0 +1,32 @@
+.countBlock {
+    height: 40px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.count {
+    padding-right: 1px;
+    padding-bottom: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: var(--second-bg-color);
+    font-weight: 400;
+    font-size: 21px;
+    color: var(--main-text-color);
+}
+
+.decrement {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    height: 100%;
+}
+
+.increment {
+    cursor: pointer;
+}

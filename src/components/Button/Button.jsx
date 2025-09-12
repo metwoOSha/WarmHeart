@@ -1,8 +1,12 @@
 import cls from "./Button.module.css";
 
-export function Button({ children, variant, type = "button" }) {
+export function Button({ children, variant, type = "button", onClick }) {
     return (
-        <button type={type} className={`${cls.button} ${cls[variant]}`}>
+        <button
+            type={type}
+            onClick={onClick}
+            className={variant ? `${cls.button} ${cls[variant]}` : cls.button}
+        >
             {children}
         </button>
     );

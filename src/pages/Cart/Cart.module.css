@@ -1,0 +1,51 @@
+.cart {
+    padding: 50px 0 150px 0;
+}
+
+.text {
+    font-weight: 900;
+    font-size: 60px;
+}
+
+.flex {
+    margin-top: 30px;
+    display: flex;
+    gap: 60px;
+}
+
+.order {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 386px;
+    height: 400px;
+    padding: 30px;
+    border-radius: 25px;
+    background-color: var(--beige-bg-color);
+    h3 {
+        font-weight: 900;
+        font-size: 36px;
+        text-align: center;
+    }
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 21px;
+    :nth-child(3) {
+        span {
+            font-weight: 700;
+            font-size: 24px;
+        }
+    }
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    :nth-child(2) {
+        font-weight: 700;
+    }
+}
