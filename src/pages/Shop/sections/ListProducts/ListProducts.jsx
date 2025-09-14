@@ -4,12 +4,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../../../store/slices/productsSlice";
 import { useEffect, useState } from "react";
 import { Card } from "../../../../components/Card/Card";
-import { Loading } from "../../../../components/Loading/Loading";
 import { Pagination } from "../../../../components/Pagination";
+import { SkeletonCard } from "../../../../components/SkeletonCard/SkeletonCard";
 
 export function ListProducts() {
     const [isPage, setIsPage] = useState(1);
-    const [limit, setLimit] = useState(2);
+    const [limit, setLimit] = useState(12);
+    const [delayedLoading, setDelayedLoading] = useState(false);
+
     const dispatch = useDispatch();
 
     const { list, loading, error, totalCount } = useSelector(
@@ -20,24 +22,34 @@ export function ListProducts() {
         dispatch(fetchProducts({ isPage, limit, to: "blankets" }));
     }, [dispatch, isPage, limit]);
 
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            setDelayedLoading(loading);
+        }, 100);
+
+        return () => clearTimeout(timeout);
+    }, [loading]);
+
     return (
         <section className={cls.list}>
-            {loading && <Loading />}
             <div className="container">
                 <div className={cls.wrapper}>
-                    {list.map((item) => (
-                        <Card
-                            key={item.id}
-                            image={item.image}
-                            name={item.name}
-                            size={item.size}
-                            price={item.price}
-                            id={item.id}
-                            color={item.color}
-                        />
-                    ))}
+                    {delayedLoading
+                        ? Array(limit)
+                              .fill(0)
+                              .map((_, index) => <SkeletonCard key={index} />)
+                        : list.map((item) => (
+                              <Card
+                                  key={item.id}
+                                  id={item.id}
+                                  image={item.image}
+                                  name={item.name}
+                                  size={item.size}
+                                  price={item.price}
+                              />
+                          ))}
                 </div>
-                {!loading && totalCount && limit && (
+                {totalCount && limit && (
                     <Pagination
                         setIsPage={setIsPage}
                         isPage={isPage}

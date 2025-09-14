@@ -1,9 +1,16 @@
 import { useMemo } from "react";
 import cls from "./Pagination.module.css";
 
-export function Pagination({ setIsPage, isPage, totalCount, limit, number }) {
+export function Pagination({
+    setIsPage,
+    isPage,
+    totalCount,
+    limit,
+    number,
+    loading,
+}) {
     const delta = 2;
-    const last = Math.ceil(totalCount / limit); // страницы
+    const last = Math.ceil(totalCount / limit);
 
     const left = useMemo(() => isPage - delta, [isPage]);
     const right = useMemo(() => isPage + delta + 1, [isPage]);
@@ -55,7 +62,13 @@ export function Pagination({ setIsPage, isPage, totalCount, limit, number }) {
     };
 
     return (
-        <div className={cls.paginationBlock}>
+        <div
+            className={
+                loading
+                    ? `${cls.paginationBlock} ${cls.visibility}`
+                    : cls.paginationBlock
+            }
+        >
             <ul className={number ? cls.paginationNumber : cls.pagination}>
                 {pageGroup.map((page, index) => (
                     <li

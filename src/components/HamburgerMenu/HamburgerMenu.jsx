@@ -21,31 +21,47 @@ export function HamburgerMenu({ toogleMenu }) {
                         strokeLinecap="round"
                     />
                 </svg>
-                <div className={cls.wrapper}>
-                    <NavLink
-                        to="/shop"
-                        className={({ isActive }) =>
-                            isActive ? `${cls.active}` : ""
-                        }
-                    >
-                        Shop
-                    </NavLink>
-                    <NavLink
-                        to="/about"
-                        className={({ isActive }) =>
-                            isActive ? `${cls.active}` : ""
-                        }
-                    >
-                        About us
-                    </NavLink>
-                    <NavLink
-                        to="/contacts"
-                        className={({ isActive }) =>
-                            isActive ? `${cls.active}` : ""
-                        }
-                    >
-                        Contacts
-                    </NavLink>
+                <div className={cls.flex}>
+                    <div className={cls.wrapper}>
+                        <NavLink
+                            onClick={() => toogleMenu(false)}
+                            to="/shop"
+                            className={({ isActive }) =>
+                                isActive ? `${cls.active}` : ""
+                            }
+                        >
+                            Shop
+                        </NavLink>
+                        <NavLink
+                            onClick={() => toogleMenu(false)}
+                            to="/"
+                            className={({ isActive }) =>
+                                isActive ? `${cls.active}` : ""
+                            }
+                        >
+                            About us
+                        </NavLink>
+                        <NavLink
+                            onClick={() => toogleMenu(false)}
+                            to="/contacts"
+                            className={({ isActive }) =>
+                                isActive ? `${cls.active}` : ""
+                            }
+                        >
+                            Contacts
+                        </NavLink>
+                    </div>
+                    <div className={cls.wrapper}>
+                        <NavLink
+                            onClick={() => toogleMenu(false)}
+                            to="/cart"
+                            className={({ isActive }) =>
+                                isActive ? `${cls.active}` : ""
+                            }
+                        >
+                            Cart
+                        </NavLink>
+                    </div>
                 </div>
             </nav>
         </div>

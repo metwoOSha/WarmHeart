@@ -7,22 +7,25 @@ import { Card } from "../../../../components/Card/Card";
 
 import cls from "./PopularSection.module.css";
 import { Pagination } from "../../../../components/Pagination/Pagination";
+import { SkeletonCard } from "../../../../components/SkeletonCard/SkeletonCard";
 
 export function PopularSection() {
     const [isPage, setIsPage] = useState(1);
     const [limit, setLimit] = useState(
         window.innerWidth <= 380 ? 1 : window.innerWidth <= 768 ? 2 : 3
     );
+    const [delayedLoading, setDelayedLoading] = useState(false);
 
     const dispatch = useDispatch();
 
-    const { list, loading, totalCount } = useSelector(
-        (state) => state.products
-    );
+    const { list, loading } = useSelector((state) => state.products);
 
     useEffect(() => {
-        dispatch(fetchProducts({ isPage, limit, to: "popular" }));
+        dispatch(fetchProducts({ to: "blankets" }));
     }, [dispatch, isPage, limit]);
+
+    const popularList = list.filter((item) => item.popular === true);
+    const totalCount = popularList.length;
 
     useEffect(() => {
         function handleResize() {
@@ -52,21 +55,35 @@ export function PopularSection() {
         };
     }, [limit]);
 
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            setDelayedLoading(loading);
+        }, 100);
+
+        return () => clearTimeout(timeout);
+    }, [loading]);
+
     return (
         <section className={cls.popular}>
             <div className="container">
                 <h2>Popular products</h2>
                 <div className={cls.wrapper}>
-                    {list.map((item) => (
-                        <Card
-                            key={item.id}
-                            id={item.id}
-                            image={item.image}
-                            name={item.name}
-                            size={item.size}
-                            price={item.price}
-                        />
-                    ))}
+                    {delayedLoading
+                        ? Array(limit)
+                              .fill(0)
+                              .map((_, index) => <SkeletonCard key={index} />)
+                        : popularList
+                              .slice((isPage - 1) * limit, isPage * limit)
+                              .map((item) => (
+                                  <Card
+                                      key={item.id}
+                                      id={item.id}
+                                      image={item.image}
+                                      name={item.name}
+                                      size={item.size}
+                                      price={item.price}
+                                  />
+                              ))}
                 </div>
                 {totalCount > limit && (
                     <Pagination

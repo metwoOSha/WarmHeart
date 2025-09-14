@@ -18,12 +18,7 @@
     flex-direction: column;
     gap: 50px;
     box-shadow: 4px 0 12px rgba(0, 0, 0, 0.3);
-    a {
-        font-weight: 400;
-        font-size: 21px;
-        text-decoration: none;
-        cursor: pointer;
-    }
+
     :before {
         content: "";
         width: 100%;
@@ -36,8 +31,21 @@
     }
 }
 
+.flex {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
 .wrapper {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    a {
+        font-weight: 400;
+        font-size: 21px;
+        text-decoration: none;
+        cursor: pointer;
+        color: var(--second-text-color);
+    }
 }
