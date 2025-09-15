@@ -82,6 +82,7 @@ export function PopularSection() {
                                       name={item.name}
                                       size={item.size}
                                       price={item.price}
+                                      color={item.color}
                                   />
                               ))}
                 </div>

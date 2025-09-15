@@ -46,6 +46,7 @@ export function ListProducts() {
                                   name={item.name}
                                   size={item.size}
                                   price={item.price}
+                                  color={item.color}
                               />
                           ))}
                 </div>

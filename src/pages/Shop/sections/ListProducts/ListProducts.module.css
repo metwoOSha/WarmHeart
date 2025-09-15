@@ -8,3 +8,21 @@
     column-gap: 30px;
     row-gap: 35px;
 }
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
+}
