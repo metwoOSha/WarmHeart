@@ -22,7 +22,7 @@ export function Cart() {
         <section className={cls.cart}>
             <div className="container">
                 <h2 className={cls.text}>Shopping cart</h2>
-                <div className={cls.flex}>
+                <div className={cls.content}>
                     <div style={{ marginTop: "30px" }}>
                         <CartList />
                     </div>

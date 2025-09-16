@@ -45,6 +45,7 @@ export function Pagination({
             for (let i = 1; i <= last; i++) {
                 range.push(i);
             }
+
             return range;
         }
     }, [left, right, limit]);
