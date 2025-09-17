@@ -9,7 +9,7 @@ import { SkeletonCard } from "../../../../components/SkeletonCard/SkeletonCard";
 
 export function ListProducts() {
     const [isPage, setIsPage] = useState(1);
-    const [limit, setLimit] = useState(3);
+    const [limit, setLimit] = useState(12);
     const [delayedLoading, setDelayedLoading] = useState(false);
 
     const dispatch = useDispatch();

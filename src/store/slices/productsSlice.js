@@ -3,19 +3,22 @@ import axios from "axios";
 
 export const fetchProducts = createAsyncThunk(
     "products/fetchProducts",
-    async ({ isPage = 1, limit = 10, to }) => {
-        const queryParams = new URLSearchParams({
-            _page: isPage,
-            _limit: limit,
-        }).toString();
+    async ({ isPage = 1, limit, to }) => {
+        const params = new URLSearchParams();
+
+        if (limit) {
+            params.set("_page", isPage);
+            params.set("_limit", limit);
+        }
 
         const res = await axios.get(
-            `${import.meta.env.VITE_PRODUCTS_URL}${to}?${queryParams}`
+            `${import.meta.env.VITE_PRODUCTS_URL}${to}?${params.toString()}`
         );
 
         return {
             data: res.data,
-            totalCount: parseInt(res.headers["x-total-count"], 10) || 0,
+            totalCount:
+                parseInt(res.headers["x-total-count"], 10) || res.data.length,
         };
     }
 );
