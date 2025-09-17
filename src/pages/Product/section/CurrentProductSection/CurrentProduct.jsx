@@ -7,6 +7,7 @@ import { fetchProducts } from "../../../../store/slices/productsSlice";
 import { Counter } from "../../../../components/Counter/Counter";
 
 import { addToCart } from "../../../../store/slices/cartSlice";
+import { Navigate } from "../../../../components/Navigate/Navigate";
 
 export function CurrentProduct() {
     const [counter, setCounter] = useState(1);
@@ -31,6 +32,7 @@ export function CurrentProduct() {
     return currentProduct ? (
         <section className={cls.currentProduct}>
             <div className="container">
+                <Navigate item={currentProduct.name} />
                 <div className={cls.wrapper}>
                     <div className={cls.imageBlock}>
                         <img
@@ -99,13 +101,15 @@ export function CurrentProduct() {
                         </div>
 
                         <div className={cls.addBlock}>
-                            <div style={{ marginTop: "60px" }}>
+                            <div className={cls.counter}>
                                 <Counter
                                     counter={counter}
                                     setCounter={setCounter}
                                 />
                             </div>
-                            <Button onClick={addProduct}>Add to cart</Button>
+                            <Button onClick={addProduct} variant="product">
+                                Add to cart
+                            </Button>
                         </div>
                     </div>
                 </div>

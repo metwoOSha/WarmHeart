@@ -1,5 +1,13 @@
-import { CurrentProduct } from "./section/CurrentProduct/CurrentProduct";
+import { AlsoLikeSection } from "./section/AlsoLikeSection/AlsoLikeSection";
+import { CurrentProduct } from "./section/CurrentProductSection/CurrentProduct";
+import { ViewedSection } from "./section/ViewedSection/ViewedSection";
 
 export function Product() {
-    return <CurrentProduct />;
+    return (
+        <>
+            <CurrentProduct />
+            <AlsoLikeSection />
+            <ViewedSection />
+        </>
+    );
 }

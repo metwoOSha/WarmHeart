@@ -1,0 +1,1 @@
+export { AlsoLikeSection } from "./AlsoLikeSection";

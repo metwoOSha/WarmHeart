@@ -14,9 +14,23 @@
     background-color: var(--main-bg-color);
     color: var(--second-text-color);
 }
+@media screen and (max-width: 1000px) {
+    .button {
+        font-size: 17px;
+    }
+    .product {
+        padding: 13px 12% 18px 12%;
+    }
+}
 
 @media screen and (max-width: 645px) {
     .button {
         font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .product {
+        padding: 13px 10% 18px 10%;
     }
 }

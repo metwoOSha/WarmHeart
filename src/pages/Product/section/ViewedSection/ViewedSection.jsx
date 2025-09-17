@@ -1,8 +1,7 @@
 import { Viewed } from "../../../../components/Viewed/Viewed";
+import cls from "./ViewedSection.module.css";
 
-import cls from "./LastViewed.module.css";
-
-export function LastViewed() {
+export function ViewedSection() {
     return (
         <section className={cls.viewed}>
             <Viewed />

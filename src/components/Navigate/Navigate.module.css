@@ -1,0 +1,18 @@
+.flex {
+    margin: 30px 0;
+    width: 214px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 17px;
+    span {
+        opacity: 0.3;
+    }
+    a {
+        color: var(--second-text-color);
+        opacity: 0.3;
+    }
+    :nth-child(5) {
+        opacity: 1;
+    }
+}
