@@ -285,15 +285,18 @@
 }
 
 @media screen and (max-width: 520px) {
+    .imageBlock {
+        padding: 10%;
+    }
     .card {
         height: 120px;
     }
     .infoBlock h3 {
-        font-size: 21px;
+        font-size: 14px;
     }
 
     .infoBlock span {
-        font-size: 17px;
+        font-size: 15px;
     }
     .priceBlock button {
         padding: 8px 10px 6px;
@@ -334,5 +337,17 @@
     }
     #sizeColor {
         display: none;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .infoBlock {
+        width: 35%;
+    }
+}
+
+@media screen and (max-width: 345px) {
+    .infoBlock {
+        width: 25%;
     }
 }

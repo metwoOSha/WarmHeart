@@ -132,11 +132,9 @@ export function Header() {
                             Cart ({items.length})
                         </NavLink>
                     </nav>
-                    <nav
-                        id={cls.svgIcons}
-                        onClick={() => setIsSearchOpen(true)}
-                    >
+                    <nav id={cls.svgIcons}>
                         <svg
+                            onClick={() => setIsSearchOpen(true)}
                             width="28"
                             height="28"
                             viewBox="0 0 28 28"
