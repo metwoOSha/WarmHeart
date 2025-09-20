@@ -1,7 +1,10 @@
 import { NavLink } from "react-router-dom";
 import cls from "./HamburgerMenu.module.css";
+import { useState } from "react";
+import { Search } from "../Search/Search";
 
-export function HamburgerMenu({ toogleMenu }) {
+export function HamburgerMenu({ toogleMenu, toggleSearch }) {
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
     return (
         <div>
             <div className={cls.overlay}></div>
@@ -61,6 +64,10 @@ export function HamburgerMenu({ toogleMenu }) {
                         >
                             Cart
                         </NavLink>
+                        <button onClick={toggleSearch}>Search</button>
+                        {isSearchOpen && (
+                            <Search onClose={() => setIsSearchOpen(false)} />
+                        )}
                     </div>
                 </div>
             </nav>

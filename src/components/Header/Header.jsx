@@ -4,12 +4,19 @@ import cls from "./Header.module.css";
 import { useEffect, useState } from "react";
 import { HamburgerMenu } from "../HamburgerMenu";
 import { useSelector } from "react-redux";
+import { Search } from "../Search/Search";
 
 export function Header() {
     const [isOpen, setIsOpen] = useState(false);
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
 
     function toogleMenu() {
         setIsOpen((prev) => !prev);
+    }
+
+    function toggleSearch() {
+        setIsOpen(false);
+        setIsSearchOpen(true);
     }
 
     const { items } = useSelector((state) => state.cart);
@@ -42,8 +49,13 @@ export function Header() {
     }, [isOpen]);
 
     return (
-        <header>
-            {isOpen && <HamburgerMenu toogleMenu={toogleMenu} />}
+        <header className={cls.stickyHeader}>
+            {isOpen && (
+                <HamburgerMenu
+                    toogleMenu={toogleMenu}
+                    toggleSearch={toggleSearch}
+                />
+            )}
             <div className="container">
                 <div className={cls.header}>
                     <div className={cls.burger} onClick={toogleMenu}>
@@ -105,7 +117,12 @@ export function Header() {
                         <h1 id={cls.wh}>WH</h1>
                     </div>
                     <nav className={cls.linksSearch}>
-                        <a href="">Search</a>
+                        <button onClick={() => setIsSearchOpen(true)}>
+                            Search
+                        </button>
+                        {isSearchOpen && (
+                            <Search onClose={() => setIsSearchOpen(false)} />
+                        )}
                         <NavLink
                             to="/cart"
                             className={({ isActive }) =>
@@ -115,7 +132,10 @@ export function Header() {
                             Cart ({items.length})
                         </NavLink>
                     </nav>
-                    <nav id={cls.svgIcons}>
+                    <nav
+                        id={cls.svgIcons}
+                        onClick={() => setIsSearchOpen(true)}
+                    >
                         <svg
                             width="28"
                             height="28"

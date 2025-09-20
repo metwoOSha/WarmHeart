@@ -60,6 +60,9 @@ export function Pagination({
         } else {
             setIsPage(page);
         }
+        if (number) {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
     };
 
     return (

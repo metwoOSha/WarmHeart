@@ -2,14 +2,14 @@ import cls from "./ListProducts.module.css";
 
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../../../store/slices/productsSlice";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Card } from "../../../../components/Card/Card";
 import { Pagination } from "../../../../components/Pagination";
 import { SkeletonCard } from "../../../../components/SkeletonCard/SkeletonCard";
 
 export function ListProducts() {
     const [isPage, setIsPage] = useState(1);
-    const [limit, setLimit] = useState(12);
+    const [limit, setLimit] = useState(6);
     const [delayedLoading, setDelayedLoading] = useState(false);
 
     const dispatch = useDispatch();
@@ -30,8 +30,10 @@ export function ListProducts() {
         return () => clearTimeout(timeout);
     }, [loading]);
 
+    const listRef = useRef();
+
     return (
-        <section className={cls.list}>
+        <section className={cls.list} ref={listRef}>
             <div className="container">
                 <div className={cls.wrapper}>
                     {delayedLoading
