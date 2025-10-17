@@ -26,7 +26,6 @@ export function Pagination({
                     range.push(i);
                 }
             }
-
             for (let i of range) {
                 if (l) {
                     if (i - l === 2) {
@@ -35,11 +34,9 @@ export function Pagination({
                         rangeWithDots.push("...");
                     }
                 }
-
                 rangeWithDots.push(i);
                 l = i;
             }
-
             return rangeWithDots;
         } else {
             for (let i = 1; i <= last; i++) {

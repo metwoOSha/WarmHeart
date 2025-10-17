@@ -13,7 +13,7 @@ export function ComfortSection() {
                         <h2>Create comfort in home</h2>
                         <p>
                             A blanket is a simple and versatile thing that can
-                            make relaxing after a hard day's work much more
+                            make relaxing after a hard day's work much more
                             comfortable.
                         </p>
                     </div>

@@ -46,6 +46,15 @@
     font-weight: 400;
     font-size: 21px;
 }
+
+.img {
+    transition: 0.33s;
+}
+
+.img:hover {
+    transform: scale(1.05);
+    outline: 5px solid #f0f0f0;
+}
 #text,
 #warm {
     display: none;

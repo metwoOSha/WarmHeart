@@ -65,7 +65,7 @@ export function Search({ onClose }) {
             document.body.style.left = "";
             document.body.style.right = "";
 
-            window.scrollTo(0, scrollY); // вернуть скролл на место
+            window.scrollTo(0, scrollY);
         };
     }, []);
 

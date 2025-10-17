@@ -9,6 +9,13 @@
     color: var(--main-text-color);
     cursor: pointer;
 }
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.button:active {
+    transform: translateY(2px);
+}
 
 .white {
     background-color: var(--main-bg-color);
